@@ -1,0 +1,53 @@
+{
+    "name": "atan/framework",
+    "description": "Bare bones framework based on FIG PSRs",
+    "keywords": [
+        "framework", "microframework", "middleware", "FIG", "PSR", "Interop"
+    ],
+    "homepage": "https://github.com/atanvarno69/atan-framework",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/core"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/dependency"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/error"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/http-tools"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/middleware"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/router"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Atan\\Framework\\": "src"
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "psr/http-message-implementation": "1.0.0",
+        "psr/container-implementation": "1.0.0",
+        "http-interop/http-middleware": "^0.3.0",
+        "http-interop/http-factory": "^0.2.0",
+        "atan/core": "^0.1.1",
+        "atan/dependency": "^0.1.1",
+        "atan/middleware": "^0.1.0",
+        "atan/router": "^0.1.0"
+    }
+}
