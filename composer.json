@@ -42,12 +42,12 @@
     "require": {
         "php": "^7.0",
         "psr/http-message-implementation": "1.0.0",
-        "psr/container-implementation": "1.0.0",
         "http-interop/http-middleware": "^0.3.0",
         "http-interop/http-factory": "^0.2.0",
+        "zendframework/zend-diactoros": "^1.3.7",
         "atan/core": "^0.1.1",
         "atan/dependency": "^0.1.1",
         "atan/middleware": "^0.1.0",
-        "atan/router": "^0.1.0"
+        "atan/router": "*"
     }
 }
