@@ -11,7 +11,7 @@
 namespace Atan\Framework;
 
 /** Package use block. */
-use Atan\Core\Controller;
+use Atan\Core\Abstract\Controller;
 
 /** PSR-7 use block. */
 use Psr\Http\Message\{
