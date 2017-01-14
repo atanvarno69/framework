@@ -60,7 +60,7 @@
         }
     ],
     "scripts": {
-        "post-create-project-cmd": [
+        "post-root-package-install": [
             "Atan\\Framework\\ComposerScripts::postCreateProject"
         ],
         "post-package-install": [
