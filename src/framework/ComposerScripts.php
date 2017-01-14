@@ -51,28 +51,29 @@ class ComposerScripts
         self::deleteDirectoryIfEmpty($assetsDir);
     }
     
-    public static function postRootPackageInstall(Event $event)
+    public static function postRootPackageInstall(Event $event = null)
     {
-        $rootDir = Core::path(dirname(__DIR__, 2));
-        $appDir = Core::path($rootDir, 'app');
-        $assetsDir = Core::path($rootDir, 'assets');
-        $publicDir = Core::path($rootDir, 'public');
+        $dir = include Core::path(
+            dirname(__DIR__, 2),
+            'config',
+            'directories.php'
+        );
         $dirs = [
-            $appDir,
-            Core::path($appDir, 'cache'),
-            Core::path($appDir, 'log'),
-            Core::path($rootDir, 'config'),
-            Core::path($rootDir, 'resources'),
-            $publicDir,
-            Core::path($publicDir, 'assets'),
-            Core::path($publicDir, 'assets', 'atan'),
-            $assetsDir,
+            $dir['app'],
+            Core::path($dir['app'], 'cache'),
+            Core::path($dir['app'], 'log'),
+            $dir['config'],
+            $dir['resources'],
+            $dir['public'],
+            Core::path($dir['public'], 'assets'),
+            Core::path($dir['public'], 'assets', 'atan'),
+            $dir['assets'],
         ];
         foreach ($dirs as $dir) {
             self::createDirectoryIfMissing($dir);
         }
-        $link = Core::path($publicDir, 'assets', 'atan', 'framework');
-        symlink($assetsDir, $link);
+        $link = Core::path($dir['public'], 'assets', 'atan', 'framework');
+        symlink($dir['assets'], $link);
     }
 
     private static function createDirectoryIfMissing(string $path)
