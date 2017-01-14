@@ -24,19 +24,33 @@ $routeConfigPath = Core::path(__DIR__, 'routes.php');
 return [
     'Emitter' =>
         [Atan\Core\Emitter::class],
-    'Example' =>
-        [Atan\Framework\Example::class],
-    'MiddlewareRunner' => [
-        Atan\Middleware\Runner::class,
-        [':StreamFactory', ':ResponseFactory', $middlewareConfigPath],
+    'Example' => [
+        Atan\Framework\Example::class,
+        [':StreamFactory', ':ResponseFactory'],
     ],
-    'Preparer' => 
-        [Atan\Core\Preparer::class],
+    'MiddlewareRunner' => [
+        Atan\Middleware\LazyLoadingRunner::class,
+        [
+            ':StreamFactory',
+            ':ResponseFactory',
+            ':Container',
+            include $middlewareConfigPath,
+        ],
+    ],
+    'Preparer' => [
+        Atan\Core\Preparer::class,
+        [':StreamFactory', ':ResponseFactory'],
+    ],
     'ResponseFactory' =>
         [Http\Factory\Diactoros\ResponseFactory::class],
     'Router' => [
         Atan\Router\RouterMiddleware::class,
-        [':StreamFactory', ':ResponseFactory', $routeConfigPath],
+        [
+            ':StreamFactory',
+            ':ResponseFactory',
+            ':Container',
+            include $routeConfigPath
+        ],
     ],
     'ServerRequestFactory' =>
         [Http\Factory\Diactoros\ServerRequestFactory::class],

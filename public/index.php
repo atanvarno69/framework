@@ -10,4 +10,4 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  */
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'main.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'main.php';

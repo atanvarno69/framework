@@ -11,7 +11,7 @@
 namespace Atan\Framework;
 
 /** Package use block. */
-use Atan\Core\Abstract\Controller;
+use Atan\Core\Controller;
 
 /** PSR-7 use block. */
 use Psr\Http\Message\{
@@ -38,7 +38,7 @@ class Example extends Controller
  </body>
 </html>
 ';
-        $response = $this->getPrototypeResponse()->withStatus('200');
+        $response = $this->buildPrototypeResponse()->withStatus('200');
         $response->getBody()->write($body);
         return $response;
     }

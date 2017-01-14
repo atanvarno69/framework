@@ -13,6 +13,6 @@
 /** Return array of route definitions. */
 return [
     [
-        ['GET', 'POST'], '[{name}]', 'Example',
+        ['GET', 'POST'], '[/{name}]', 'Example',
     ],
 ];
