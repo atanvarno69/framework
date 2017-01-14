@@ -8,7 +8,7 @@
  * @license   https://opensource.org/licenses/MIT The MIT License
  */
 
-namespace Atan\Framework;
+namespace Atan\Framework\Example;
 
 /** Package use block. */
 use Atan\Core\Controller;
