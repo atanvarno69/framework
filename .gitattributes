@@ -16,7 +16,6 @@
 
 # Ignore for distribution
 /docs               export-ignore
-/tests              export-ignore
 /.gitattributes     export-ignore
 /.gitignore         export-ignore
 /phpunit.xml        export-ignore

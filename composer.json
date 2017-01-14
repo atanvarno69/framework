@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Atan\\Framework\\": "src"
+            "Atan\\Framework\\": "src/framework"
         }
     },
     "autoload-dev": {
@@ -53,6 +53,21 @@
         {
             "type": "vcs",
             "url": "https://github.com/atanvarno69/router"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/atanvarno69/test"
         }
-    ]
+    ],
+    "scripts": {
+        "post-create-project-cmd": [
+            "Atan\\Framework\\ComposerScripts::postCreateProject"
+        ],
+        "post-package-install": [
+            "Atan\\Framework\\ComposerScripts::postPackageInstall"
+        ],
+        "pre-package-uninstall": [
+            "Atan\\Framework\\ComposerScripts::prePackageUninstall"
+        ]
+    }
 }
