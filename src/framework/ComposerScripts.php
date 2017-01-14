@@ -19,7 +19,7 @@ class ComposerScripts
 {
     public static function postCreateProject(Event $event)
     {
-        echo $event->getArguments();
+        print_r($event->getArguments());
     }
 
     public static function postPackageInstall(PackageEvent $event)
