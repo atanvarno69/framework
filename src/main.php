@@ -26,7 +26,7 @@ require dirname(__DIR__)
 Core::error(true);
 
 /** @var string $configDir Configuration directory path. */
-$configDir = Core::path(dirname(__DIR__), 'app', 'config');
+$configDir = Core::path(dirname(__DIR__), 'config');
 
 /** @var Interop\Container\ContainerInterface $container DI container. */
 $container = new Container(include Core::path($configDir, 'dependencies.php'));
