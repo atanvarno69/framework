@@ -19,7 +19,22 @@ class ComposerScripts
 {
     public static function postCreateProject(Event $event)
     {
-        print_r($event->getArguments());
+        $rootDir = Core::path(dirname(__DIR__, 2));
+        $rootAssetsDir = Core::path($rootDir, 'assets');
+        $publicDir = Core::path($rootDir, 'public');
+        self::createDirectoryIfMissing(Core::path($rootDir, 'assets'));
+        self::createDirectoryIfMissing(Core::path($rootDir, 'cache'));
+        self::createDirectoryIfMissing(Core::path($rootDir, 'config'));
+        self::createDirectoryIfMissing(Core::path($rootDir, 'log'));
+        self::createDirectoryIfMissing(Core::path($publicDir));
+        self::createDirectoryIfMissing(Core::path($publicDir, 'assets'));
+        self::createDirectoryIfMissing(Core::path($publicDir, 'assets', 'atan'));
+        self::createDirectoryIfMissing(Core::path($rootDir, 'resources'));
+        $link = Core::path($rootDir, 'public', 'assets', 'atan')
+            . DIRECTORY_SEPARATOR
+            . 'framework';
+        $target = $rootAssetsDir;
+        symlink($target, $link);
     }
 
     public static function postPackageInstall(PackageEvent $event)
