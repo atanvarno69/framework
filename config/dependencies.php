@@ -25,7 +25,7 @@ return [
     'Emitter' =>
         [Atan\Core\Emitter::class],
     'Example' => [
-        Atan\Framework\Example::class,
+        Atan\Framework\Example\Example::class,
         [':StreamFactory', ':ResponseFactory'],
     ],
     'MiddlewareRunner' => [
