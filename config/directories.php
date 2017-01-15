@@ -16,7 +16,7 @@ use Atan\Framework\Core;
 
 return [
     'root' => dirname(__DIR__),
-    'app' => Core::path(dirname(__DIR__), 'app'),
+    'storage' => Core::path(dirname(__DIR__), 'storage'),
     'assets' => Core::path(dirname(__DIR__), 'assets'),
     'config' => __DIR__,
     'public' => Core::path(dirname(__DIR__), 'public'),

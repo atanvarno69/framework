@@ -59,9 +59,9 @@ class ComposerScripts
             'directories.php'
         );
         $dirs = [
-            $dir['app'],
-            Core::path($dir['app'], 'cache'),
-            Core::path($dir['app'], 'log'),
+            $dir['storage'],
+            Core::path($dir['storage'], 'cache'),
+            Core::path($dir['storage'], 'log'),
             $dir['config'],
             $dir['resources'],
             $dir['public'],
