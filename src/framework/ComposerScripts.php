@@ -59,15 +59,15 @@ class ComposerScripts
             'directories.php'
         );
         $dirs = [
-            $dir['storage'],
-            Core::path($dir['storage'], 'cache'),
-            Core::path($dir['storage'], 'log'),
+            $dir['assets'],
             $dir['config'],
-            $dir['resources'],
             $dir['public'],
             Core::path($dir['public'], 'assets'),
             Core::path($dir['public'], 'assets', 'atan'),
-            $dir['assets'],
+            $dir['resources'],
+            $dir['storage'],
+            Core::path($dir['storage'], 'cache'),
+            Core::path($dir['storage'], 'log'),
         ];
         foreach ($dirs as $dir) {
             self::createDirectoryIfMissing($dir);
